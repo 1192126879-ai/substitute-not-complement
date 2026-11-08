@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-import glob, json, os
+import glob
+import os, json, os
 from collections import defaultdict
 import numpy as np
 from scipy import stats as st
 
-ROOT = "/root/autodl-tmp/gt_paper"
+ROOT = os.environ.get("GARA_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BASE = dict(n_tokens=8, full_layers=4, layer=20, K=8, rank=16)
 CELL = ["input_local", "input_full", "both_local", "both_full", "weight_local", "weight_full", "mix_lw", "mix_fl"]
 

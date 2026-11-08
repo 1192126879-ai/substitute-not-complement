@@ -6,6 +6,7 @@ what is added per node. Weights of the projectors/adapters are random: latency
 does not depend on their values, only on shapes.
 """
 import json
+import os
 import sys
 import time
 
@@ -14,12 +15,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-sys.path.insert(0, "/root/autodl-tmp")
 from k_scan_cora import GaRALinear
 
-MODEL = "/root/autodl-tmp/vicuna-7b-v1.5"
-CACHE_L = "/root/autodl-tmp/gt_paper/zcache/roman_empire_l1_s0.pt"
-CACHE_F = "/root/autodl-tmp/gt_paper/zcache/roman_empire_f4_s0.pt"
+MODEL = os.environ.get("MODEL", "vicuna-7b-v1.5")
+CACHE_L = os.environ.get("CACHE_L", "zcache/roman_empire_l1_s0.pt")
+CACHE_F = os.environ.get("CACHE_F", "zcache/roman_empire_f4_s0.pt")
 N_NODES = 96
 N_TOKENS = 8
 REPEATS = 2

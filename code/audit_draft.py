@@ -19,7 +19,7 @@ from itertools import combinations
 import numpy as np
 from scipy import stats as st
 
-ROOT = "/root/autodl-tmp/gt_paper"
+ROOT = os.environ.get("GARA_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DIRS = ["gara_diag", "gara_mix", "gara_cora", "gara_ctrl", "gara_sweep",
         "gara_feat"]
 BASE = dict(n_tokens=8, full_layers=4, layer=20, K=8, rank=16)

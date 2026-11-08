@@ -10,7 +10,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-ROOT = "/root/autodl-tmp/gt_paper"
+ROOT = os.environ.get("GARA_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 FIG = os.path.join(ROOT, "figs")
 os.makedirs(FIG, exist_ok=True)
 DIRS = ["gara_diag", "gara_mix", "gara_ctrl", "gara_sweep", "gara_cora",

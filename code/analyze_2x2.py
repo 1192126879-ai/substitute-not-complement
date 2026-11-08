@@ -20,7 +20,7 @@ from collections import defaultdict
 
 import numpy as np
 
-ROOT = "/root/autodl-tmp/gt_paper"
+ROOT = os.environ.get("GARA_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DIRS = ["gara_diag", "gara_mix"]
 
 

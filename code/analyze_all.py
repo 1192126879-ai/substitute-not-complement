@@ -14,7 +14,7 @@ from collections import defaultdict
 
 import numpy as np
 
-ROOT = "/root/autodl-tmp/gt_paper"
+ROOT = os.environ.get("GARA_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MAIN = {"gara_diag": None, "gara_mix": None, "gara_qwen": None, "gara_qmix": None,
         "gara_ctrl": None, "gara_sweep": None, "gara_cora": None}
 
